@@ -1,3 +1,4 @@
+PluginError     = require 'plugin-error'
 accord          = require 'accord'
 map             = require 'map-stream'
 path            = require 'path'
@@ -24,7 +25,7 @@ module.exports = (lang, opts = {}) ->
     if file.isNull() then return cb()
 
     if file.isStream()
-      return cb(new gutil.PluginError(PLUGIN_NAME, "streams not supported!"))
+      return cb(new PluginError(PLUGIN_NAME, "streams not supported!"))
 
     if file.sourceMap then opts.sourcemap = true
 
@@ -39,4 +40,4 @@ module.exports = (lang, opts = {}) ->
           file.contents = new Buffer(res.result)
           if res.sourcemap then apply_sourcemap(file, res.sourcemap)
         .done (-> cb(null, file)), (err) ->
-          cb(new gutil.PluginError(PLUGIN_NAME, err))
+          cb(new PluginError(PLUGIN_NAME, err))

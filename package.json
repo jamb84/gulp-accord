@@ -14,6 +14,7 @@
   "main": "lib",
   "dependencies": {
     "accord": "0.20.x",
+    "plugin-error": "1.0.1",
     "map-stream": "0.1.x",
     "replace-ext": "0.0.1",
     "vinyl-sourcemaps-apply": "0.2.x"
