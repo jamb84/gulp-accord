@@ -1,4 +1,3 @@
-gutil           = require 'gulp-util'
 accord          = require 'accord'
 map             = require 'map-stream'
 path            = require 'path'
